@@ -56,7 +56,7 @@ app.use(function(err, req, res, next) {
 });
 
 // ポート設定
-app.set('httpsport', process.env.PORT || 44502);
+app.set('httpsport', process.env.PORT || 44503);
 
 // サーバ立ち上げ
 var server = https.createServer(ssloptions,app).listen(app.get('httpsport'), function(){
