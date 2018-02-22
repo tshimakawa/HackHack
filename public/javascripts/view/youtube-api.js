@@ -1,37 +1,49 @@
 var tag = document.createElement('script');
 
- tag.src = "https://www.youtube.com/iframe_api";
- var firstScriptTag = document.getElementsByTagName('script')[0];
- firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
- var player;
- function onYouTubeIframeAPIReady() {
-   player = new YT.Player('player', {
-     height: '390',
-     width: '640',
-     videoId: 'M7lc1UVf-VE',
-     events: {
-       'onReady': onPlayerReady,
-       'onStateChange': onPlayerStateChange
-     }
-   });
- }
+let player;
+let movieID;
+function onYouTubeIframeAPIReady(){
+  player = new YT.Player('player',{
+    height: '360',
+    width: '640',
+    videoId: movieID,
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
 
- function onPlayerReady(event) {
-   event.target.playVideo();
- }
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
 
- function onPlayerReady(event) {
-   event.target.playVideo();
- }
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING){//動画が再生中場合
 
- var done = false;
- function onPlayerStateChange(event) {
-   if (event.data == YT.PlayerState.PLAYING && !done) {
-     setTimeout(stopVideo, 6000);
-     done = true;
-   }
- }
- function stopVideo() {
-   player.stopVideo();
- }
+  }
+  if(event.data == YT.PlayerState.ENDED){//動画再生が終了した場合
+    $.ajax({
+      url: 'https://v157-7-129-202.myvps.jp/getMovieID',
+      type: 'GET',
+      dataType: 'json',
+      timeout: 5000,
+    }).done(function(data) {
+      movieID = data.body.movieID;
+      event.target.playVideo();
+    }).fail(function() {
+     // 通信失敗時の処理を記述
+    });
+  }
+  if(event.data == YT.PlayerState.PAUSED){//動画再生を停止した場合
+
+  }
+}
+
+function stopVideo() {
+  player.stopVideo();
+}
