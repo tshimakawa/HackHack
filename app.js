@@ -10,6 +10,7 @@ const mongoose = require('mongoose');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
+const getMovieID = require('./routes/getMovieID');
 
 const app = express();
 
@@ -36,6 +37,7 @@ rejectUnauthorized: false
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/getMovieID',getMovieID);
 //app.login('/login',login);
 
 // catch 404 and forward to error handler
