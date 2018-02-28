@@ -7,7 +7,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 let player;
 let movieID = "4PF7QK-RWwI";
 function onYouTubeIframeAPIReady(){
-  console.log("--------------");
   console.log(movieID);
   player = new YT.Player('player',{
     height: '360',
@@ -37,6 +36,8 @@ function onPlayerStateChange(event) {
     }).done(function(data) {
       console.log(data);
       movieID = data.body.movieID;
+      console.log("--------------");
+      console.log(movieID);
       event.target.playVideo();
     }).fail(function() {
      // 通信失敗時の処理を記述
