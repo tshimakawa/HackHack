@@ -5,7 +5,7 @@ const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 let player;
-var movieID = "4PF7QK-RWwI";
+let movieID = "4PF7QK-RWwI";
 function onYouTubeIframeAPIReady(){
   console.log(movieID);
   player = new YT.Player('player',{
@@ -35,7 +35,7 @@ function onPlayerStateChange(event) {
       timeout: 5000,
     }).done(function(data) {
       console.log(data);
-      movieID = data.body.movieID;
+      let movieID = data.body.movieID;
       console.log("--------------");
       console.log(movieID);
       event.target.playVideo();
