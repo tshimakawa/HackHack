@@ -35,7 +35,7 @@ function onPlayerStateChange(event) {
       timeout: 5000,
     }).done(function(data) {
       console.log(data);
-      let movieID = data.body.movieID;
+      movieID = data.movieID;
       console.log("--------------");
       console.log(movieID);
       event.target.playVideo();
