@@ -5,18 +5,16 @@ const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 let player;
-let movieID = new Array();
-let videoIndex = 0;
-movieID.push("4PF7QK-RWwI")
+let movieID = "4PF7QK-RWwI";
 function onYouTubeIframeAPIReady(){
   console.log("onYouTubeIframeAPIReady");
   player = new YT.Player('player',{
     height: '360',
     width: '640',
-    videoId: movieID[videoIndex],
+    videoId: movieID,
     playerVars: {
-                autoplay:1,
-                rel     :0, // 関連動画非表示
+                autoplay:0,
+                rel     :0 // 関連動画非表示
               },
     events: {
       'onReady': onPlayerReady,
@@ -28,7 +26,7 @@ function onYouTubeIframeAPIReady(){
 
 function onPlayerReady(event) {
   console.log("onPlayerReady");
-  // event.target.playVideo();
+  event.target.playVideo();
 }
 
 function onPlayerStateChange(event) {
@@ -42,8 +40,10 @@ function onPlayerStateChange(event) {
       dataType: 'json',
       timeout: 5000,
     }).done(function(body) {
-      movieID.push(body.movieID);
-      videoIndex ++;
+      movieID = body.movieID;
+
+      event.data.loadVideoById(movieID);
+
     }).fail(function() {
      // 通信失敗時の処理を記述
     });
