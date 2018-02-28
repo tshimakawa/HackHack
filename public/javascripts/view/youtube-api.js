@@ -42,7 +42,7 @@ function onPlayerStateChange(event) {
     }).done(function(body) {
       movieID = body.movieID;
 
-      event.data.loadVideoById(movieID);
+      event.target.loadVideoById(movieID);
 
     }).fail(function() {
      // 通信失敗時の処理を記述
