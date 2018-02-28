@@ -39,10 +39,10 @@ function onPlayerStateChange(event) {
     }).done(function(data) {
       console.log(data);
       movieID = data.movieID;
-      console.log("--------------");
-      console.log(movieID);
-      onYouTubeIframeAPIReady();
-      // event.target.playVideo();
+      
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     }).fail(function() {
      // 通信失敗時の処理を記述
     });
