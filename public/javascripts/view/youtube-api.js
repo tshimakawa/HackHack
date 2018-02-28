@@ -33,6 +33,7 @@ function onPlayerStateChange(event) {
       dataType: 'json',
       timeout: 5000,
     }).done(function(data) {
+      console.log(data);
       movieID = data.body.movieID;
       event.target.playVideo();
     }).fail(function() {
