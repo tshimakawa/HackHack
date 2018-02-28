@@ -28,7 +28,7 @@ function onPlayerStateChange(event) {
   }
   if(event.data == YT.PlayerState.ENDED){//動画再生が終了した場合
     $.ajax({
-      url: 'https://v157-7-129-202.myvps.jp/getMovieID',
+      url: 'https://v157-7-129-202.myvps.jp:44503/getMovieID',
       type: 'GET',
       dataType: 'json',
       timeout: 5000,
