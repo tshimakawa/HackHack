@@ -7,7 +7,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 let player;
 let movieID = "4PF7QK-RWwI";
 function onYouTubeIframeAPIReady(){
-  console.log(movieID);
+  console.log("onYouTubeIframeAPIReady");
   player = new YT.Player('player',{
     height: '360',
     width: '640',
@@ -23,6 +23,7 @@ function onYouTubeIframeAPIReady(){
 }
 
 function onPlayerReady(event) {
+  console.log("onPlayerReady");
   event.target.playVideo();
 }
 
@@ -39,8 +40,6 @@ function onPlayerStateChange(event) {
     }).done(function(body) {
       movieID = body.movieID;
       onYouTubeIframeAPIReady();
-
-
     }).fail(function() {
      // 通信失敗時の処理を記述
     });
