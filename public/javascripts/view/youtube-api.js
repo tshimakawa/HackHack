@@ -40,8 +40,20 @@ function onPlayerStateChange(event) {
       timeout: 5000,
     }).done(function(body) {
       movieID = body.movieID;
-      onYouTubeIframeAPIReady();
-      player.playVideo();
+
+      player = new YT.Player('player',{
+        height: '360',
+        width: '640',
+        videoId: movieID,
+        playerVars: {
+                    rel      : 0, // 関連動画非表示
+                  },
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+      
     }).fail(function() {
      // 通信失敗時の処理を記述
     });
