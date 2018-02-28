@@ -27,17 +27,17 @@ function onPlayerStateChange(event) {
 
   }
   if(event.data == YT.PlayerState.ENDED){//動画再生が終了した場合
-    $.ajax({
-      url: 'https://v157-7-129-202.myvps.jp/getMovieID',
-      type: 'GET',
-      dataType: 'json',
-      timeout: 5000,
-    }).done(function(data) {
-      movieID = data.body.movieID;
-      event.target.playVideo();
-    }).fail(function() {
-     // 通信失敗時の処理を記述
-    });
+    // $.ajax({
+    //   url: 'https://v157-7-129-202.myvps.jp/getMovieID',
+    //   type: 'GET',
+    //   dataType: 'json',
+    //   timeout: 5000,
+    // }).done(function(data) {
+    //   movieID = data.body.movieID;
+    //   event.target.playVideo();
+    // }).fail(function() {
+    //  // 通信失敗時の処理を記述
+    // });
   }
   if(event.data == YT.PlayerState.PAUSED){//動画再生を停止した場合
 
