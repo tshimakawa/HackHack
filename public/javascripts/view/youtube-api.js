@@ -53,7 +53,7 @@ function onPlayerStateChange(event) {
           'onStateChange': onPlayerStateChange
         }
       });
-      
+      onYouTubeIframeAPIReady();
     }).fail(function() {
      // 通信失敗時の処理を記述
     });
