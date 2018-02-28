@@ -13,7 +13,8 @@ function onYouTubeIframeAPIReady(){
     width: '640',
     videoId: movieID,
     playerVars: {
-                rel      : 0, // 関連動画非表示
+                autoplay:0,
+                rel     :0, // 関連動画非表示
               },
     events: {
       'onReady': onPlayerReady,
@@ -25,7 +26,7 @@ function onYouTubeIframeAPIReady(){
 
 function onPlayerReady(event) {
   console.log("onPlayerReady");
-  event.target.playVideo();
+  // event.target.playVideo();
 }
 
 function onPlayerStateChange(event) {
