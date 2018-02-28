@@ -37,9 +37,8 @@ function onPlayerStateChange(event) {
       dataType: 'json',
       timeout: 5000,
     }).done(function(data) {
-      console.log(data);
       movieID = data.movieID;
-      
+
       tag.src = "https://www.youtube.com/iframe_api";
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
