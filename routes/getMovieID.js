@@ -1,8 +1,8 @@
 const mongoDB = require('mongoose');
-const module = require('../public/javascripts/modules');
+const modules = require('../public/javascripts/modules');
 
 router.get('/', function(req, res, next) {
-  const movieID = module.getMovieID.getMovieID();//MovieIDを取得
+  const movieID = modules.getMovieID.getMovieID();//MovieIDを取得
   let response = {
     movieID:movieID
   }
