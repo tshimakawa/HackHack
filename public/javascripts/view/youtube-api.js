@@ -13,7 +13,7 @@ function onYouTubeIframeAPIReady(){
     width: '640',
     videoId: movieID,
     playerVars: {
-                autoplay:0,
+                autoplay:1,
                 rel     :0, // 関連動画非表示
               },
     events: {
