@@ -36,12 +36,11 @@ function onPlayerStateChange(event) {
       type: 'GET',
       dataType: 'json',
       timeout: 5000,
-    }).done(function(data) {
-      movieID = data.movieID;
+    }).done(function(body) {
+      movieID = body.movieID;
+      onYouTubeIframeAPIReady();
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
     }).fail(function() {
      // 通信失敗時の処理を記述
     });
