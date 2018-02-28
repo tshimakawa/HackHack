@@ -23,7 +23,7 @@ function onYouTubeIframeAPIReady(){
 }
 
 function onPlayerReady(event) {
-  // event.target.playVideo();
+  event.target.playVideo();
 }
 
 function onPlayerStateChange(event) {
@@ -42,7 +42,7 @@ function onPlayerStateChange(event) {
       console.log("--------------");
       console.log(movieID);
       onYouTubeIframeAPIReady();
-      event.target.playVideo();
+      // event.target.playVideo();
     }).fail(function() {
      // 通信失敗時の処理を記述
     });
