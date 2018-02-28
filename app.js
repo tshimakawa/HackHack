@@ -37,7 +37,7 @@ rejectUnauthorized: false
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/getMovieID',getMovieID);
+// app.use('/getMovieID', getMovieID);
 //app.login('/login',login);
 
 // catch 404 and forward to error handler
