@@ -12,6 +12,9 @@ function onYouTubeIframeAPIReady(){
     height: '360',
     width: '640',
     videoId: movieID,
+    playerVars: {
+                rel      : 0, // 関連動画非表示
+              },
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
