@@ -41,6 +41,7 @@ function onPlayerStateChange(event) {
       movieID = data.movieID;
       console.log("--------------");
       console.log(movieID);
+      onYouTubeIframeAPIReady();
       event.target.playVideo();
     }).fail(function() {
      // 通信失敗時の処理を記述
