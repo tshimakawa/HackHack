@@ -20,7 +20,7 @@ function onYouTubeIframeAPIReady(){
       'onStateChange': onPlayerStateChange
     }
   });
-  console.log("movieID");
+  console.log(movieID);
 }
 
 function onPlayerReady(event) {
