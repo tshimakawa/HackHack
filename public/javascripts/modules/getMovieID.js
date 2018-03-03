@@ -7,6 +7,7 @@ exports.getMovieID = function(){
     console.log("enter getMovieID");
     Movie.find({'movieID':'BkOVkthMkOc'},function(error,result){
       if(error){
+        console.log(error);
         reject(error);
       }else{
         console.log(result);
