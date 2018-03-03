@@ -7,7 +7,7 @@ exports.getMovieID = function(){
     console.log("enter getMovieID");
     Movie.find({function(error,result){
       if(error){
-        reject(error;);
+        reject(error);
       }else{
         console.log(result);
         resolve("qag4ewos4TE");
