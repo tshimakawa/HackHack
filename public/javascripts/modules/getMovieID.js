@@ -13,7 +13,7 @@ exports.getMovieID = function(){
         console.log(result);
         resolve("qag4ewos4TE");
       }
+      console.log("aaaaaaaaaaaaa");
     });
-    console.log("aaaaaaaaaaaaa");
   });
 }
