@@ -1,6 +1,6 @@
 const mongoDB = require('mongoose');
 //モデル（スキーマ）の宣言
-const Movie = require('/javascripts/models/movie');
+const Movie = require('../models/movie');
 
 exports.getMovieID = function(){
   return new Promise(function(resolve,reject){
