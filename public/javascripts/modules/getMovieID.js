@@ -5,9 +5,9 @@ const Movie = require('../schema/movie');
 exports.getMovieID = function(){
   return new Promise(function(resolve,reject){
     console.log("enter getMovieID");
-    Movie.find({},function(err,result){
-      if(err){
-        reject(err);
+    Movie.find({'movieID':'BkOVkthMkOc'},function(error,result){
+      if(error){
+        reject(error);
       }else{
         console.log(result);
         resolve("qag4ewos4TE");
