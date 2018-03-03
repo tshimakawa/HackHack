@@ -64,6 +64,7 @@ app.set('httpsport', process.env.PORT || 44503);
 // サーバ立ち上げ
 var server = https.createServer(ssloptions,app).listen(app.get('httpsport'), function(){
     console.log('Express HTTPS server listening on port ' + app.get('httpsport'));
+		mongoose.connect('mongodb://localhost/HackHack');
 });
 
 module.exports = app;

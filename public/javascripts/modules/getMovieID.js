@@ -1,11 +1,11 @@
 const mongoDB = require('mongoose');
 //モデル（スキーマ）の宣言
-const Movie = require('/javascripts/schema/movie.js');
+const Movie = require('/javascripts/models/movie');
 
 exports.getMovieID = function(){
   return new Promise(function(resolve,reject){
     console.log("enter getMovieID");
-    Movie.find({'movieID':'BkOVkthMkOc'},function(error,result){
+    Movie.find({},function(error,result){
       if(error){
         console.log(error);
         reject(error);
