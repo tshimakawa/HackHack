@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
         movieID:movieID
       }
       res.send(JSON.stringify(response));
+      console.log("------------------");
     },function(error){
       console.log(error);
     }
