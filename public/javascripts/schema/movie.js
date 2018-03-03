@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const movie = new Schema({
+const Movie = new Schema({
   movieID:{type:String,require:true}
 });
 
