@@ -11,6 +11,7 @@ const mongoose = require('mongoose');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const getMovieID = require('./routes/getMovieID');
+const webhook = require('./routes/webhook');
 
 const app = express();
 
@@ -38,6 +39,7 @@ rejectUnauthorized: false
 app.use('/', index);
 app.use('/users', users);
 app.use('/getMovieID', getMovieID);
+app.use('/webhook', webhook);
 //app.login('/login',login);
 
 // catch 404 and forward to error handler
