@@ -15,7 +15,7 @@ router.post('/',function(req,res){
     if(url.substr(0,6) == 'https://'){
       console.log("aaaaaaa");
     }else{
-      console.log(url.substr(0,6));
+      console.log(url.substr(0,8));
     }
   }else{
     console.log("cccccccc");
