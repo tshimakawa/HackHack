@@ -10,8 +10,8 @@ router.post('/',function(req,res){
   let text = "";
   let url = "";
   text = req.body.text;
-  console.log(text.length);
   url = text.substr(1,text.length-2);
+  console.log(url);
 });
 
 module.exports = router;
