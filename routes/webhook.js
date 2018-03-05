@@ -7,8 +7,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function(req,res){
-  const text = "";
-  const url = "";
+  let text = "";
+  let url = "";
   text = req.body.text;
   console.log(text.length);
   url = text.substr(1,text.length-2);
