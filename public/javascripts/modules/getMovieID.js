@@ -22,7 +22,7 @@ exports.getMovieID = function(){
         resolve(mainlist_result[0].movieID);
 
 
-        for(let num=0,num<100;num++){
+        for(let num=0;num<100;num++){
           console.log(num);
         }
 
