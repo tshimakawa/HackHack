@@ -10,6 +10,7 @@ exports.getMovieID = function(){
         console.log(error);
         reject(error);
       }else{
+        console.log(result);
         resolve(result[0].movieID);
       }
     });
