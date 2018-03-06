@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const modules = require('/javascripts/modules');
+const modules = require('../public/javascripts/modules');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
