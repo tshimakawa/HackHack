@@ -10,14 +10,13 @@ router.get('/', function(req, res, next) {
 router.post('/',function(req,res){
   let text = "";
   let url = "";
-  let videoID = ""
+  let movieID = ""
   text = req.body.text;
   if(text.length > 7){//slackに投稿されたメッセージが8文字以上の場合
     url = text.substr(1,text.length-2);
     if(url.substr(0,8) == 'https://'){
       if(url.indexOf('v=') != -1){
-        videoID = url.substr(url.indexOf('v=')+2,11);
-        console.log(videoID);
+        movieID = url.substr(url.indexOf('v=')+2,11);
         modules.putMovieID.putMovieID(movieID).then(
           function(result){
              res.send("success");
