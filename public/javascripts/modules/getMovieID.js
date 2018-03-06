@@ -28,12 +28,14 @@ exports.getMovieID = function(){
             sublist.movieID = mainlist_result[0].movieID;
             sublist.save(function(error){
               if(error) throw error;
+              else{
+                console.log("SubListへの登録完了");
+              }
             });
           }else{
-
+            console.log("すでにSubListへ登録されてます");
           }
         });
-
         MainList.remove({_id:mainlist_result[0]._id},function(error){
           if(error) throw error;
         });
