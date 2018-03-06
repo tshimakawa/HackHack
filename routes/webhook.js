@@ -9,11 +9,14 @@ router.get('/', function(req, res, next) {
 router.post('/',function(req,res){
   let text = "";
   let url = "";
+  let videoID = ""
   text = req.body.text;
   if(text.length > 7){//slackに投稿されたメッセージが8文字以上の場合
     url = text.substr(1,text.length-2);
     if(url.substr(0,8) == 'https://'){
-      console.log("aaaaaaa");
+      if(url.indexOf('v=') != -1){
+        console.log(url.indexOf('v='));
+      }
     }else{
       console.log(url.substr(0,8));
     }
