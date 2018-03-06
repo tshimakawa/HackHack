@@ -14,7 +14,11 @@ function onYouTubeIframeAPIReady(){
     videoId: movieID,
     playerVars: {
                 autoplay:0,
-                rel     :0 // 関連動画非表示
+                rel     :0, // 関連動画非表示
+                fs      :0,
+                iv_load_policy:3,
+                modestbranding:1,
+                showinfo:0
               },
     events: {
       'onReady': onPlayerReady,
