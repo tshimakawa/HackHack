@@ -2,7 +2,6 @@ const mongoDB = require('mongoose');
 //モデル（スキーマ）の宣言
 const PlayList = require('../models/playlist');
 const subPlayList = require('../models/subplaylist');
-const subplaylist = new subPlayList();
 
 exports.getMovieID = function(){
   return new Promise(function(resolve,reject){
@@ -11,6 +10,7 @@ exports.getMovieID = function(){
       if(error){
         reject(error);
       }else if(result.length == 0){//playlistが空のとき
+        const subplaylist = new subPlayList();
         subplaylist.find({},function(error,result){
           if(error){
             reject(error);
