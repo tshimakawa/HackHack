@@ -1,32 +1,32 @@
 const mongoDB = require('mongoose');
 //モデル（スキーマ）の宣言
-const PlayList = require('../models/playlist');
-const subPlayList = require('../models/subplaylist');
+const MainList = require('../models/mainlist');
+const SubList = require('../models/sublist');
 
 exports.getMovieID = function(){
   return new Promise(function(resolve,reject){
     console.log("enter getMovieID");
-    PlayList.find({},function(error,result){
+    MainList.find({},function(error,mainlist_result){
       if(error){
         reject(error);
-      }else if(result.length == 0){//playlistが空のとき
-        const subplaylist = new subPlayList();
-        subplaylist.find({},function(error,result){
+      }else if(mainlist_result.length == 0){//playlistが空のとき
+        const sublist = new SubList();
+        sublist.find({},function(error,sublist_result){
           if(error){
             reject(error);
           }else{
-            resolve(result[Math.floor(Math.random()*result.length)].movieID);
+            resolve(sublist_result[Math.floor(Math.random()*sublist_result.length)].movieID);
           }
         });
       }else{//playlistに曲が登録されている時
-        resolve(result[0].movieID);
+        resolve(mainlist_result[0].movieID);
 
-        const subplaylist = new subPlayList();
-        subPlayList.find({movieID:result[0].movieID},function(error,result){
+        const sublist = new SubList();
+        sublist.find({movieID:mainlist_result[0].movieID},function(error,sublist_result){
           if(error) throw error;
-          else if(result.length == 0){
-            subplaylist.movieID = result[0].movieID;
-            subplaylist.save(function(error){
+          else if(sublist_result.length == 0){
+            sublist.movieID = mainlist_result[0].movieID;
+            sublist.save(function(error){
               if(error) throw error;
             });
           }else{
@@ -34,7 +34,7 @@ exports.getMovieID = function(){
           }
         });
 
-        PlayList.remove({_id:result[0]._id},function(error){
+        MainList.remove({_id:mainlist_result[0]._id},function(error){
           if(error) throw error;
         });
       }
