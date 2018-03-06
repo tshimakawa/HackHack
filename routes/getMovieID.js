@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
         movieID:movieID
       }
       res.send(JSON.stringify(response));
+      modules.removeMovieID.removeMovieID(movieID);
     },function(error){
       console.log(error);
     }
