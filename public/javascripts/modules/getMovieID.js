@@ -21,11 +21,6 @@ exports.getMovieID = function(){
       }else{//playlistに曲が登録されている時
         resolve(mainlist_result[0].movieID);
 
-
-        for(let num=0;num<10000;num++){
-          console.log(num);
-        }
-
         const sublist = new SubList();
         sublist.find({movieID:mainlist_result[0].movieID},function(error,sublist_result){
 
@@ -45,9 +40,11 @@ exports.getMovieID = function(){
           }
 
         });
+        console.log("入ってる3");
         MainList.remove({_id:mainlist_result[0]._id},function(error){
           if(error) throw error;
         });
+        console.log("入ってる2");
       }
     });
   });
