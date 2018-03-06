@@ -1,14 +1,14 @@
 const mongoDB = require('mongoose');
 //モデル（スキーマ）の宣言
-const Movie = require('../models/movie');
+const PlayList = require('../models/playlist');
+const playlist = new PlayList();
 
 exports.putMovieID = function(movieID){
   return new Promise(function(resolve,reject){
     console.log("enter putMovieID");
 
-    const movie = new Movie();
-    movie.movieID = movieID;
-    movie.save(function(error){
+    playlist.movieID = movieID;
+    playlist.save(function(error){
         if (error){
           reject(error);
         }
