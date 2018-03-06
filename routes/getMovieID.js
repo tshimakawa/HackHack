@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
         movieID:result.movieID
       }
       res.send(JSON.stringify(response));
-      modules.removeMovieID.removeMovieID(result);
+      // modules.removeMovieID.removeMovieID(result);
     },function(error){
       console.log(error);
     }
