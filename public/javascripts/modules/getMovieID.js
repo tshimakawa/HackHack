@@ -19,7 +19,7 @@ exports.getMovieID = function(){
           }
         });
       }else{//playlistに曲が登録されている時
-        resolve(mainlist_result[0].movieID);
+        resolve(mainlist_result[0]);
       }
     });
   });
