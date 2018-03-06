@@ -22,8 +22,8 @@ exports.getMovieID = function(){
         resolve(mainlist_result[0].movieID);
 
 
-        for(let i=0,i<100;i++){
-          console.log(i);
+        for(let num=0,num<100;num++){
+          console.log(num);
         }
 
         const sublist = new SubList();
