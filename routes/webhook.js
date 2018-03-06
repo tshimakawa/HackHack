@@ -19,6 +19,7 @@ router.post('/',function(req,res){
         movieID = url.substr(url.indexOf('v=')+2,11);
         modules.putMovieID.putMovieID(movieID).then(
           function(result){
+            console.log("movieIDの登録に成功");
              res.send("success");
           },function(error){
             console.log(error);
