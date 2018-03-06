@@ -1,7 +1,5 @@
 
 module.exports = {
-  getMovieID:require('./getMovieID.js')
-};
-module.exports = {
+  getMovieID:require('./getMovieID.js'),
   putMovieID:require('./putMovieID.js')
 };
