@@ -15,7 +15,7 @@ exports.getMovieID = function(){
             reject(error);
           }else{
             const num = Math.floor(Math.random()*sublist_result.length);
-            console.log(num);
+            console.log(sublist_result.length);
             resolve(sublist_result[num]);
           }
         });
