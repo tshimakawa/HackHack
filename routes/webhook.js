@@ -17,6 +17,7 @@ router.post('/',function(req,res){
     if(url.substr(0,8) == 'https://'){
       if(url.indexOf('v=') != -1){
         videoID = url.substr(url.indexOf('v=')+2,11);
+        console.log(videoID);
         modules.putMovieID.putMovieID(movieID).then(
           function(result){
              res.send("success");
