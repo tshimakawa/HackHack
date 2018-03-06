@@ -21,6 +21,11 @@ exports.getMovieID = function(){
       }else{//playlistに曲が登録されている時
         resolve(mainlist_result[0].movieID);
 
+
+        for(let i=0,i<100;i++){
+          console.log(i);
+        }
+
         const sublist = new SubList();
         sublist.find({movieID:mainlist_result[0].movieID},function(error,sublist_result){
 
