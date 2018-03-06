@@ -10,8 +10,7 @@ exports.getMovieID = function(){
       if(error){
         reject(error);
       }else if(mainlist_result.length == 0){//playlistが空のとき
-        const sublist = new SubList();
-        sublist.find({},function(error,sublist_result){
+        SubList.find({},function(error,sublist_result){
           if(error){
             reject(error);
           }else{

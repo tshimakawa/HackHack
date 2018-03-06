@@ -5,9 +5,10 @@ const SubList = require('../models/sublist');
 
 exports.removeMovieID = function(movieInfo){
   const sublist = new SubList();
-  sublist.find({movieID:movieInfo.movieID},function(error,sublist_result){
+  SubList.find({movieID:movieInfo.movieID},function(error,sublist_result){
     if(error) throw error;
     else if(sublist_result.length == 0){
+      const sublist = new SubList();
       sublist.movieID = movieInfo.movieID;
       sublist.save(function(error){
         if(error) throw error;
