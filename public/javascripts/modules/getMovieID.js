@@ -11,10 +11,9 @@ exports.getMovieID = function(){
         reject(error);
       }else{
         resolve(result[0].movieID);
-        console.log(result[0]._id);
-        // Movie.remove({
-        //
-        // });
+        Movie.remove({_id:result[0]._id},function(error){
+          if(error) throw error;
+        });
       }
     });
   });
