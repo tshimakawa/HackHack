@@ -10,11 +10,12 @@ exports.getMovieID = function(){
       if(error){
         reject(error);
       }else if(mainlist_result.length == 0){//playlistが空のとき
-        console.log("aaaaaaaaaaaaaaaa");
         SubList.find({},function(error,sublist_result){
           if(error){
             reject(error);
           }else{
+            console.log("aaaaaaaaaaaaaaaa");
+            console.log(sublist_result[Math.floor(Math.random()*sublist_result.length)].movieID);
             resolve(sublist_result[Math.floor(Math.random()*sublist_result.length)].movieID);
           }
         });
