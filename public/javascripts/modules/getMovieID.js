@@ -24,8 +24,6 @@ exports.getMovieID = function(){
         const sublist = new SubList();
         sublist.find({movieID:mainlist_result[0].movieID},function(error,sublist_result){
 
-          console.log("入ってる");
-
           if(error) throw error;
           else if(sublist_result.length == 0){
             sublist.movieID = mainlist_result[0].movieID;

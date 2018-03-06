@@ -8,6 +8,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function(req,res){
+  res.send("success");
+  
   let text = "";
   let url = "";
   let movieID = ""
@@ -20,7 +22,6 @@ router.post('/',function(req,res){
         modules.putMovieID.putMovieID(movieID).then(
           function(result){
             console.log("movieIDの登録に成功");
-             res.send("success");
           },function(error){
             console.log(error);
           }
