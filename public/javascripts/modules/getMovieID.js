@@ -14,7 +14,9 @@ exports.getMovieID = function(){
           if(error){
             reject(error);
           }else{
-            resolve(sublist_result[Math.floor(Math.random()*sublist_result.length)]);
+            const num = Math.floor(Math.random()*sublist_result.length);
+            console.log(num);
+            resolve(sublist_result[num]);
           }
         });
       }else{//playlistに曲が登録されている時
