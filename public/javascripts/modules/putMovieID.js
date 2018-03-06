@@ -8,7 +8,7 @@ exports.putMovieID = function(movieID){
 
     const movie = new Movie();
     movie.movieID = movieID;
-    movie.save(function(err){
+    movie.save(function(error){
         if (error){
           reject(error);
         }
