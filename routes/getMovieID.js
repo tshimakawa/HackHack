@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
       }
       res.send(JSON.stringify(response));
       //mainlistから曲を取り出した場合
-      if(result.list == 'mainlist') modules.removeMovieID.removeMovieID(result);
+      if(result.list == 'mainlist') modules.removeMovieID.removeMovieID(result.movieInfo);
     },function(error){
       console.log(error);
     }
