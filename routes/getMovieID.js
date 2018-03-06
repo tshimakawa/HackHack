@@ -3,6 +3,7 @@ const router = express.Router();
 const modules = require('../public/javascripts/modules');
 
 router.get('/', function(req, res, next) {
+  console.log("aaaaaaaaaaaaaaa");
   modules.getMovieID.getMovieID().then(
     function(movieID){
       let response = {
