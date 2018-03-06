@@ -14,13 +14,19 @@ exports.getMovieID = function(){
           if(error){
             reject(error);
           }else{
-            const num = Math.floor(Math.random()*sublist_result.length);
-            console.log(sublist_result.length);
-            resolve(sublist_result[num]);
+            const result = {
+              list:'sublist',
+              movieInfo:sublist_result[Math.floor(Math.random()*sublist_result.length)]
+            };
+            resolve(result);
           }
         });
       }else{//playlistに曲が登録されている時
-        resolve(mainlist_result[0]);
+        const result = {
+          list:'mainlist',
+          movieInfo:mainlist_result[0]
+        };
+        resolve(result);
       }
     });
   });

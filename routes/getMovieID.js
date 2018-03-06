@@ -7,10 +7,11 @@ router.get('/', function(req, res, next) {
     function(result){
       //result={_id,movieID} _idがないとremoveMovieID関数でMainListから動画が削除できない
       let response = {
-        movieID:result.movieID
+        movieID:result.movieInfo.movieID
       }
       res.send(JSON.stringify(response));
-      // modules.removeMovieID.removeMovieID(result);
+      //mainlistから曲を取り出した場合
+      if(result.list == 'mainlist') modules.removeMovieID.removeMovieID(result);
     },function(error){
       console.log(error);
     }
