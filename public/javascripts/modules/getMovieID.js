@@ -22,6 +22,7 @@ exports.getMovieID = function(){
         resolve(mainlist_result[0].movieID);
 
         const sublist = new SubList();
+        console.log("入ってる");
         sublist.find({movieID:mainlist_result[0].movieID},function(error,sublist_result){
           if(error) throw error;
           else if(sublist_result.length == 0){
@@ -35,8 +36,6 @@ exports.getMovieID = function(){
           }else{
             console.log("すでにSubListへ登録されてます");
           }
-
-          console.log("入ってる");
 
         });
         MainList.remove({_id:mainlist_result[0]._id},function(error){
